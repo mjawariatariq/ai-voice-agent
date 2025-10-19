@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swp
+
+# Virtual env
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+
+# Database / local files
+conversations.db
+*.sqlite3
+
+# Secrets & configs
+.env
+*.key
+*.pem
+
+# OS
+Thumbs.db
+.DS_Store
+
+# ffmpeg or other heavy binaries (optional)
+app/ffmpeg/

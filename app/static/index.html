@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Voice Agent 🎙️</title>
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+<div class="container">
+  <h1>🎙️ AI Voice Agent</h1>
+  <p>Speak and talk to your AI assistant</p>
+
+  <select id="language">
+    <option value="en">English</option>
+    <option value="ur">Urdu</option>
+  </select>
+
+  <button id="recordBtn">🎤 Start Recording</button>
+  <p id="status">Click to start...</p>
+
+  <div class="result">
+    <h3>You said:</h3>
+    <p id="userText"></p>
+    <h3>AI replied:</h3>
+    <p id="aiReply"></p>
+  </div>
+
+  <audio id="audioPlayer" controls></audio>
+</div>
+<script src="/static/script.js"></script>
+</body>
+</html>

@@ -27,7 +27,12 @@ import pyttsx3
 from google import genai  # ✅ Gemini client
 
 # Initialize Gemini client (use your Gemini API key)
-client = genai.Client(api_key="AIzaSyC9OAVmSvQ1AWcTLtyLdxuVAER8uScCEqE")
+import os
+from dotenv import load_dotenv
+load_dotenv()
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+
+# client = genai.Client(api_key="APIKEY")
 
 
 # Initialize text-to-speech engine
@@ -69,7 +74,7 @@ while True:
         break
  
     # ✨ Gemini Response
-    response = client.models.generate_content(
+    response = GEMINI_API_KEY.models.generate_content(
         model="gemini-2.0-flash",
         contents=text
     )

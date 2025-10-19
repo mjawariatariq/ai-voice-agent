@@ -17,8 +17,12 @@ import tempfile
 import whisper
 import pyttsx3
 from google import genai
+import os
+from dotenv import load_dotenv
+load_dotenv()
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
-client = genai.Client(api_key="AIzaSyC9OAVmSvQ1AWcTLtyLdxuVAER8uScCEqE")
+# client = genai.Client(api_key="APIKEY")
 model = whisper.load_model("base")
 
 engine = pyttsx3.init()
@@ -76,7 +80,7 @@ def run_realtime_agent():
         if text.lower() in ["exit", "quit", "stop"]:
             speak_text("Goodbye!")
             break
-        response = client.models.generate_content(model="gemini-2.0-flash", contents=text)
+        response = GEMINI_API_KEY.models.generate_content(model="gemini-2.0-flash", contents=text)
         reply = response.text
         print("🤖 AI:", reply)
         speak_text(reply)
